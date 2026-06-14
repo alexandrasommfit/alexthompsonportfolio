@@ -385,23 +385,12 @@
     #skills { background: var(--cream); overflow-x: hidden; width: 100%; }
 
     .skills-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
       margin-bottom: 4rem;
-      align-items: end;
-    }
-
-    .skills-desc {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.8;
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1px;
       background: var(--blue-light);
       border: 1px solid var(--blue-light);
@@ -416,12 +405,20 @@
 
     .skill-card:hover { background: var(--blue-light); }
 
-    .skill-card:last-child {
-      grid-column: span 3;
+    .skill-card.skill-more {
+      background: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    @media (max-width: 700px) {
-      .skill-card:last-child { grid-column: span 1; }
+    .skill-card.skill-more p {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--blue-dark);
+      text-transform: uppercase;
     }
 
     .skill-icon {
@@ -578,6 +575,11 @@
       font-size: 1.8rem;
       color: var(--blue);
       font-weight: 600;
+    }
+
+    .analytics-stat-num.small {
+      font-size: 1.15rem;
+      line-height: 1.3;
     }
 
     .analytics-stat-label {
@@ -862,11 +864,13 @@
       .portfolio-card.medium,
       .portfolio-card.third { grid-column: span 12; }
       .portfolio-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 600px) {
       .nav-toggle { display: flex; }
+
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
 
       .nav-logo { font-size: 0.6rem; letter-spacing: 0.1em; max-width: 60%; }
       .nav-links {
@@ -917,7 +921,7 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-text">
-      <p class="hero-eyebrow fade-in d1">Digital Marketing Specialist</p>
+      <p class="hero-eyebrow fade-in d1">Paid Social &middot; Content Strategy &middot; Analytics</p>
       <h1 class="hero-name fade-in d2">
         Hello,<br>I'm <em>Alex</em>
       </h1>
@@ -973,7 +977,6 @@
         <p class="section-label">What I Do</p>
         <h2 class="section-title">A full suite of<br><em>marketing skills</em></h2>
       </div>
-      <p class="skills-desc">From paid ads to photography, I bring together creative and analytical thinking to deliver marketing that performs. Here's what I bring to the table.</p>
     </div>
     <div class="skills-grid">
       <div class="skill-card">
@@ -1054,7 +1057,10 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
         </svg>
         <p class="skill-name">AI-Driven Optimization</p>
-        <p class="skill-desc">Using AI tools to streamline workflows and content strategy — and more.</p>
+        <p class="skill-desc">Continuously researching and applying AI tools and best practices to improve workflows, campaigns, and content strategy.</p>
+      </div>
+      <div class="skill-card skill-more">
+        <p>...and more</p>
       </div>
     </div>
   </section>
@@ -1075,9 +1081,9 @@
       <div class="scroll-row">
         <div class="gallery-card"><img src="meta-ad-greg-brown.jpg" alt="Greg Brown Orthodontics paid ad" /></div>
         <div class="gallery-card"><img src="cbc-classes-begin.jpg" alt="Columbia Basin College winter quarter ad" /></div>
+        <div class="gallery-card"><img src="meta-website-review.jpg" alt="Client testimonial ad graphic" /></div>
         <div class="gallery-card"><img src="cbc-enrollment.jpg" alt="Columbia Basin College spring enrollment ad" /></div>
         <div class="gallery-card"><img src="meta-asian-expo.jpg" alt="Full service marketing highlight ad" /></div>
-        <div class="gallery-card"><img src="meta-website-review.jpg" alt="Client testimonial ad graphic" /></div>
       </div>
     </div>
 
@@ -1091,9 +1097,9 @@
       </div>
       <div class="scroll-row">
         <div class="photo-card"><img src="photography-coffeenow.jpg" alt="Coffee Now branded beverage photography" /></div>
-        <div class="photo-card"><img src="colonial-landscaping.jpg" alt="Colonial landscaping detail photography" /></div>
         <div class="photo-card"><img src="colonial-spray.jpg" alt="Colonial lawn care service photography" /></div>
         <div class="photo-card"><img src="kie-showroom.jpg" alt="KIE Supply showroom photography" /></div>
+        <div class="photo-card"><img src="colonial-landscaping.jpg" alt="Colonial landscaping detail photography" /></div>
         <div class="photo-card"><img src="kie-konaice.jpg" alt="Kona Ice food truck photography" /></div>
       </div>
     </div>
@@ -1108,8 +1114,8 @@
       </div>
       <div class="scroll-row">
         <div class="reel-card">
-          <video controls preload="none" poster="reel1-poster.jpg">
-            <source src="reel1.mp4" type="video/mp4" />
+          <video controls preload="none" poster="reel3-poster.jpg">
+            <source src="reel3.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="reel-card">
@@ -1118,8 +1124,8 @@
           </video>
         </div>
         <div class="reel-card">
-          <video controls preload="none" poster="reel3-poster.jpg">
-            <source src="reel3.mp4" type="video/mp4" />
+          <video controls preload="none" poster="reel1-poster.jpg">
+            <source src="reel1.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -1135,19 +1141,19 @@
       </div>
       <div class="scroll-row">
         <div class="social-card">
-          <iframe src="https://www.instagram.com/reel/DSdSq6sFYK9/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
-        </div>
-        <div class="social-card">
-          <iframe src="https://www.instagram.com/p/DYAomw3EgoM/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+          <iframe src="https://www.instagram.com/p/CovRY9uStyL/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
         </div>
         <div class="social-card">
           <iframe src="https://www.instagram.com/p/C4s6ZKEsG9w/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
         </div>
         <div class="social-card">
-          <iframe src="https://www.instagram.com/p/CovRY9uStyL/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+          <iframe src="https://www.instagram.com/p/DYAomw3EgoM/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
         </div>
         <div class="social-card">
           <iframe src="https://www.instagram.com/p/DCS3wZytJ2P/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+        <div class="social-card">
+          <iframe src="https://www.instagram.com/reel/DSdSq6sFYK9/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -1171,11 +1177,11 @@
         </div>
         <div>
           <div class="analytics-stat-num">1.5K &rarr; 6.4K</div>
-          <div class="analytics-stat-label">Event Responses, Tumbleweed Festival</div>
+          <div class="analytics-stat-label">Event Responses, Tumbleweed Music Festival</div>
         </div>
         <div>
-          <div class="analytics-stat-num">Top 20</div>
-          <div class="analytics-stat-label">15/20 Best Ads, Apollo Heating</div>
+          <div class="analytics-stat-num small">Top 20 Best-Performing Creatives</div>
+          <div class="analytics-stat-label">15 of 20 Ever, Within Q1 of Takeover — Apollo Heating</div>
         </div>
       </div>
     </div>
