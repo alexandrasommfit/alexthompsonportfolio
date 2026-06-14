@@ -7,11 +7,7 @@ A personal portfolio website showcasing digital marketing, content creation, and
 - Hosted on Netlify
 
 ## Structure
-```
-index.html        Main site file
-assets/           Images, favicon, work samples, and resume
-robots.txt        SEO crawler config
-```
+All images, videos, favicon, and the resume PDF live alongside `index.html` in the repository root.
 
 ## Deployment
 This site is deployed via Netlify, connected to this GitHub repository for continuous deployment.
