@@ -62,11 +62,12 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
       font-weight: 500;
-      color: var(--navy);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
     }
 
     .nav-logo span { color: var(--blue); }
@@ -88,6 +89,33 @@
     }
 
     .nav-links a:hover { color: var(--blue); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 28px;
+      height: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 101;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 1px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* HERO */
     #hero {
@@ -388,6 +416,14 @@
 
     .skill-card:hover { background: var(--blue-light); }
 
+    .skill-card:last-child {
+      grid-column: span 3;
+    }
+
+    @media (max-width: 700px) {
+      .skill-card:last-child { grid-column: span 1; }
+    }
+
     .skill-icon {
       width: 36px;
       height: 36px;
@@ -416,80 +452,6 @@
     #portfolio .section-label { color: rgba(74, 127, 212, 0.8); }
     #portfolio .section-title { color: var(--white); }
     #portfolio .section-title em { color: var(--blue); }
-
-    /* Carousel */
-    .carousel-track {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.4s ease;
-    }
-
-    .carousel-track > .carousel-slide {
-      flex: 0 0 100%;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel-track > .carousel-slide img,
-    .carousel-track > .carousel-slide > div {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(15,31,61,0.55);
-      border: none;
-      color: white;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1rem;
-      z-index: 5;
-      opacity: 0;
-      transition: opacity 0.2s, background 0.2s;
-    }
-
-    .carousel:hover .carousel-arrow { opacity: 1; }
-
-    .carousel-arrow:hover { background: var(--blue); }
-    .carousel-arrow.prev { left: 10px; }
-    .carousel-arrow.next { right: 10px; }
-
-    .carousel-dots {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      z-index: 5;
-    }
-
-    .carousel-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .carousel-dot.active {
-      background: var(--blue);
-      transform: scale(1.3);
-    }
 
     /* Portfolio sub-sections */
     .work-section {
@@ -521,34 +483,6 @@
       font-weight: 400;
       color: var(--white);
       margin-top: 0.4rem;
-    }
-
-    .work-section-desc {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      max-width: 420px;
-      line-height: 1.7;
-      text-align: right;
-    }
-
-    @media (max-width: 700px) {
-      .work-section-desc { text-align: left; max-width: 100%; }
-    }
-
-    /* Large gallery carousel */
-    .gallery-carousel {
-      aspect-ratio: 16/9;
-      max-height: 520px;
-      border-radius: 4px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (max-width: 700px) {
-      .gallery-carousel { aspect-ratio: 4/3; max-height: none; }
     }
 
     /* Horizontal scroll rows (reels, social) */
@@ -590,6 +524,38 @@
     .social-card iframe {
       border-radius: 4px;
       border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-card {
+      flex: 0 0 auto;
+      width: 280px;
+      aspect-ratio: 1/1;
+      border-radius: 4px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .photo-card {
+      flex: 0 0 auto;
+      width: 280px;
+      aspect-ratio: 4/5;
+      border-radius: 4px;
+      overflow: hidden;
+      scroll-snap-align: start;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Analytics strip */
@@ -899,9 +865,33 @@
       .skills-grid { grid-template-columns: 1fr; }
     }
 
-        @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .hero-cta-ghost { display: none; }
+    @media (max-width: 600px) {
+      .nav-toggle { display: flex; }
+
+      .nav-logo { font-size: 0.6rem; letter-spacing: 0.1em; max-width: 60%; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+        padding: 0.5rem 5% 1.25rem;
+        gap: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+      }
+
+      .nav-links.open {
+        max-height: 320px;
+        opacity: 1;
+      }
+
+      .nav-links a { display: block; padding: 0.4rem 0; }
     }
   </style>
 </head>
@@ -909,7 +899,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Alex<span>.</span></div>
+    <div class="nav-logo">Digital Marketing Specialist</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -917,6 +907,11 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -1059,7 +1054,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
         </svg>
         <p class="skill-name">AI-Driven Optimization</p>
-        <p class="skill-desc">Continuously researching and applying AI tools and best practices to improve workflows, campaigns, and content strategy.</p>
+        <p class="skill-desc">Using AI tools to streamline workflows and content strategy — and more.</p>
       </div>
     </div>
   </section>
@@ -1074,21 +1069,15 @@
       <div class="work-section-header">
         <div>
           <p class="work-section-label">Meta Paid Advertising</p>
-          <h3 class="work-section-title">Campaigns &amp; Ad Creative</h3>
+          <h3 class="work-section-title">Ad Creative</h3>
         </div>
-        <p class="work-section-desc">A look at paid social creative across client accounts, including Greg Brown Orthodontics, where I grew monthly clicks from 1,500 to 2,361.</p>
       </div>
-      <div class="gallery-carousel carousel">
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="meta-ad-greg-brown.jpg" alt="Greg Brown Orthodontics paid ad" style="object-fit:contain;" /></div>
-          <div class="carousel-slide"><img src="cbc-classes-begin.jpg" alt="Columbia Basin College winter quarter ad" style="object-fit:contain;" /></div>
-          <div class="carousel-slide"><img src="cbc-enrollment.jpg" alt="Columbia Basin College spring enrollment ad" style="object-fit:contain;" /></div>
-          <div class="carousel-slide"><img src="meta-asian-expo.jpg" alt="Full service marketing highlight ad" style="object-fit:contain;" /></div>
-          <div class="carousel-slide"><img src="meta-website-review.jpg" alt="Client testimonial ad graphic" style="object-fit:contain;" /></div>
-        </div>
-        <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
-        <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
-        <div class="carousel-dots"></div>
+      <div class="scroll-row">
+        <div class="gallery-card"><img src="meta-ad-greg-brown.jpg" alt="Greg Brown Orthodontics paid ad" /></div>
+        <div class="gallery-card"><img src="cbc-classes-begin.jpg" alt="Columbia Basin College winter quarter ad" /></div>
+        <div class="gallery-card"><img src="cbc-enrollment.jpg" alt="Columbia Basin College spring enrollment ad" /></div>
+        <div class="gallery-card"><img src="meta-asian-expo.jpg" alt="Full service marketing highlight ad" /></div>
+        <div class="gallery-card"><img src="meta-website-review.jpg" alt="Client testimonial ad graphic" /></div>
       </div>
     </div>
 
@@ -1099,19 +1088,13 @@
           <p class="work-section-label">Photography</p>
           <h3 class="work-section-title">Brand &amp; Product Photography</h3>
         </div>
-        <p class="work-section-desc">Creative direction and capture across client brands, from product shots to on-location lifestyle and showroom imagery.</p>
       </div>
-      <div class="gallery-carousel carousel">
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="photography-coffeenow.jpg" alt="Coffee Now branded beverage photography" /></div>
-          <div class="carousel-slide"><img src="colonial-landscaping.jpg" alt="Colonial landscaping detail photography" /></div>
-          <div class="carousel-slide"><img src="colonial-spray.jpg" alt="Colonial lawn care service photography" /></div>
-          <div class="carousel-slide"><img src="kie-showroom.jpg" alt="KIE Supply showroom photography" /></div>
-          <div class="carousel-slide"><img src="kie-konaice.jpg" alt="Kona Ice food truck photography" /></div>
-        </div>
-        <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
-        <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
-        <div class="carousel-dots"></div>
+      <div class="scroll-row">
+        <div class="photo-card"><img src="photography-coffeenow.jpg" alt="Coffee Now branded beverage photography" /></div>
+        <div class="photo-card"><img src="colonial-landscaping.jpg" alt="Colonial landscaping detail photography" /></div>
+        <div class="photo-card"><img src="colonial-spray.jpg" alt="Colonial lawn care service photography" /></div>
+        <div class="photo-card"><img src="kie-showroom.jpg" alt="KIE Supply showroom photography" /></div>
+        <div class="photo-card"><img src="kie-konaice.jpg" alt="Kona Ice food truck photography" /></div>
       </div>
     </div>
 
@@ -1120,9 +1103,8 @@
       <div class="work-section-header">
         <div>
           <p class="work-section-label">Video Editing</p>
-          <h3 class="work-section-title">Reels &amp; Short-Form Video</h3>
+          <h3 class="work-section-title">Short-Form Video</h3>
         </div>
-        <p class="work-section-desc">Edited short-form video content for client and brand accounts, built for engagement on Instagram and TikTok.</p>
       </div>
       <div class="scroll-row">
         <div class="reel-card">
@@ -1150,7 +1132,6 @@
           <p class="work-section-label">Social Media</p>
           <h3 class="work-section-title">Published Content</h3>
         </div>
-        <p class="work-section-desc">A selection of organic posts and reels published across client and personal accounts.</p>
       </div>
       <div class="scroll-row">
         <div class="social-card">
@@ -1178,7 +1159,6 @@
           <p class="work-section-label">Analytics &amp; Reporting</p>
           <h3 class="work-section-title">Real Campaign Results</h3>
         </div>
-        <p class="work-section-desc">A snapshot of measurable performance gains delivered across client accounts through ongoing optimization and reporting.</p>
       </div>
       <div class="analytics-strip">
         <div>
@@ -1186,7 +1166,7 @@
           <div class="analytics-stat-label">Monthly Leads, Atomic Dermatology</div>
         </div>
         <div>
-          <div class="analytics-stat-num">11.6 &rarr; 26</div>
+          <div class="analytics-stat-num">12 &rarr; 26</div>
           <div class="analytics-stat-label">Monthly Leads, The Blind Guy</div>
         </div>
         <div>
@@ -1218,10 +1198,10 @@
           <h3 class="timeline-role">Digital Marketing Specialist & Social Media Lead</h3>
           <p class="timeline-company">Spotted Fox Digital Marketing, Richland, WA</p>
           <ul class="timeline-bullets">
-            <li>Spearheaded strategy, execution, and optimization of paid Meta advertising campaigns across Facebook and Instagram.</li>
-            <li>Develop comprehensive analytics reports with actionable insights and adjust campaigns to meet client KPIs.</li>
-            <li>Conduct competitor and market analysis to identify opportunities and keep clients ahead of the curve.</li>
-            <li>Collaborate across departments to ensure digital efforts align with broader business objectives.</li>
+            <li>Manage Meta paid advertising across a portfolio of client accounts, handling up to $300,000 in annual ad spend through budget allocation, audience targeting, and performance analysis.</li>
+            <li>Rebuild campaign targeting and creative strategy to drive lead growth for clients across healthcare, home services, and live events.</li>
+            <li>Build monthly analytics reports for clients, tracking performance and informing campaign adjustments to meet KPIs.</li>
+            <li>Use AI tools like ChatGPT and Claude to streamline reporting and content workflows, and conduct competitor research to identify new opportunities for clients.</li>
           </ul>
         </div>
 
@@ -1231,10 +1211,10 @@
           <h3 class="timeline-role">Social Media Lead & Assistant Photographer</h3>
           <p class="timeline-company">Spotted Fox Digital Marketing, Richland, WA</p>
           <ul class="timeline-bullets">
-            <li>Led content strategy and execution for 16+ social media clients, driving engagement through tailored campaigns.</li>
-            <li>Orchestrated creative photo shoots, capturing and editing high-quality photo and video content.</li>
-            <li>Reviewed and provided feedback on specialist work, ensuring alignment with brand guidelines.</li>
-            <li>Managed workflows and mentored social media specialists to improve team performance.</li>
+            <li>Led content strategy and execution across a portfolio of social media clients, using performance data to guide content tailored to each brand.</li>
+            <li>Ran content shoots and edited photo and video content for client campaigns.</li>
+            <li>Reviewed work from social media specialists and gave feedback to ensure alignment with client goals and brand guidelines.</li>
+            <li>Mentored social media specialists and managed team workflows, improving performance and the quality of client deliverables.</li>
           </ul>
         </div>
 
@@ -1244,21 +1224,23 @@
           <h3 class="timeline-role">Social Media Specialist</h3>
           <p class="timeline-company">Spotted Fox Digital Marketing, Richland, WA</p>
           <ul class="timeline-bullets">
-            <li>Created social media content for clients, managing day-to-day posts and fostering audience engagement.</li>
+            <li>Created and managed day-to-day social media content for client accounts, building engagement and brand presence.</li>
             <li>Curated graphic, photo, and video content aligned with each brand's voice and guidelines.</li>
-            <li>Led email marketing initiatives including newsletters and promotional campaigns.</li>
+            <li>Worked with clients to understand their goals and build tailored social media strategies and campaigns.</li>
+            <li>Led email marketing efforts, creating newsletters and promotions that engaged target audiences.</li>
           </ul>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <p class="timeline-date">January 2021, Present</p>
-          <h3 class="timeline-role">Content Creator</h3>
+          <h3 class="timeline-role">Content Creator & Brand Partnerships</h3>
           <p class="timeline-company">Independent, Remote</p>
           <ul class="timeline-bullets">
-            <li>Create and curate content for personal social accounts and multiple brand client accounts.</li>
-            <li>Partner with brands to produce promotional content that drives revenue and awareness.</li>
-            <li>Strategize and implement social media content calendars across platforms.</li>
+            <li>Create lifestyle, fitness, beauty, fashion, and travel content for personal social channels, building an engaged audience through consistent posting and strategy.</li>
+            <li>Create UGC (user-generated content) and sponsored posts for brand partnerships, helping promote products and increase engagement.</li>
+            <li>Build content calendars and social media strategies for client accounts and personal channels.</li>
+            <li>Track performance metrics across platforms to refine content strategy and grow audience.</li>
           </ul>
         </div>
 
@@ -1277,13 +1259,15 @@
       <div class="aside-card">
         <p class="aside-card-title">Tools & Platforms</p>
         <ul>
-          <li>Adobe Suite (Ps, Pr, Ai)</li>
+          <li>Adobe Suite (Ps, Pr, Ai) & Canva</li>
+          <li>Premiere Pro & CapCut</li>
           <li>Meta, LinkedIn & Pinterest Ads</li>
-          <li>Google Ads</li>
-          <li>Analytics & Reporting Platforms</li>
+          <li>Google Ads & Google Analytics</li>
+          <li>CallRail</li>
           <li>Email Marketing Platforms</li>
-          <li>Canva</li>
-          <li>GitHub, Netlify & Vercel</li>
+          <li>ChatGPT & Claude (AI Tools)</li>
+          <li>GitHub, Netlify, Vercel & Railway</li>
+          <li>Wix, Squarespace & WordPress</li>
         </ul>
       </div>
     </div>
@@ -1306,55 +1290,6 @@
   </footer>
 
   <script>
-    // Carousel logic for portfolio cards
-    document.querySelectorAll('.carousel').forEach(carousel => {
-      const track = carousel.querySelector('.carousel-track');
-      const slides = carousel.querySelectorAll('.carousel-slide');
-      const prevBtn = carousel.querySelector('.carousel-arrow.prev');
-      const nextBtn = carousel.querySelector('.carousel-arrow.next');
-      const dotsContainer = carousel.querySelector('.carousel-dots');
-      let index = 0;
-
-      if (slides.length <= 1) {
-        if (prevBtn) prevBtn.style.display = 'none';
-        if (nextBtn) nextBtn.style.display = 'none';
-        if (dotsContainer) dotsContainer.style.display = 'none';
-        return;
-      }
-
-      // Build dots
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = dotsContainer.querySelectorAll('.carousel-dot');
-
-      function update() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
-      }
-
-      function goTo(i) {
-        index = (i + slides.length) % slides.length;
-        update();
-      }
-
-      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(index - 1); });
-      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(index + 1); });
-
-      // Touch swipe support
-      let startX = 0;
-      track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
-      track.addEventListener('touchend', (e) => {
-        const diff = e.changedTouches[0].clientX - startX;
-        if (diff > 50) goTo(index - 1);
-        else if (diff < -50) goTo(index + 1);
-      });
-    });
-
     // Scroll-triggered fade-in for sections
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1370,6 +1305,24 @@
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
     });
   </script>
 
