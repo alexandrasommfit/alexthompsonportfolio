@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Thompson, Digital Marketing Specialist</title>
+  <meta name="description" content="Digital Marketing Specialist with 5+ years of experience in paid social advertising, content creation, analytics, and brand strategy. Explore my portfolio of work." />
+  <meta name="author" content="Alex Thompson" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Alex Thompson, Digital Marketing Specialist" />
+  <meta property="og:description" content="Full-funnel marketer specializing in paid social, content creation, analytics, and brand storytelling." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/headshot.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; overflow-x: hidden; }
+
+    :root {
+      --cream: #FAF7F2;
+      --cream-dark: #F0EBE1;
+      --blue: #4A7FD4;
+      --blue-light: #E4EDF8;
+      --blue-dark: #2D5BA3;
+      --navy: #0F1F3D;
+      --navy-soft: #1E3560;
+      --white: #FFFFFF;
+      --text-muted: #6B7A94;
+      --border: rgba(74, 127, 212, 0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 5%;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 5%;
+      gap: 4rem;
+      padding-top: 6rem;
+    }
+
+    .hero-text { max-width: 560px; }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--blue);
+      color: white;
+      padding: 0.85rem 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--navy);
+      padding: 0.85rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--navy);
+      border-radius: 2px;
+      margin-left: 1rem;
+      transition: all 0.2s;
+    }
+
+    .hero-cta-ghost:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-frame {
+      width: 420px;
+      height: 540px;
+      position: relative;
+    }
+
+    .hero-image-frame::before {
+      content: '';
+      position: absolute;
+      top: 16px; left: 16px;
+      right: -16px; bottom: -16px;
+      border: 1.5px solid var(--blue);
+      border-radius: 2px;
+      z-index: 0;
+    }
+
+    .hero-image-frame img,
+    .hero-image-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-image-placeholder {
+      background: var(--blue-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--blue);
+    }
+
+    .hero-image-placeholder .icon {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+    }
+
+    .hero-image-placeholder p {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--blue);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* SECTION SHARED */
+    section { padding: 7rem 5%; margin: 0; width: 100%; box-sizing: border-box; }
+    #about { border-top: 3px solid var(--blue); }
+    #skills { border-top: 3px solid var(--blue); }
+    #portfolio { border-top: 3px solid rgba(74,127,212,0.4); }
+    #experience { border-top: 3px solid var(--blue); }
+    #contact { border-top: 3px solid var(--blue); }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; color: var(--blue); }
+
+    /* ABOUT */
+    #about {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text p strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-frame {
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+
+    .about-image-frame::after {
+      content: 'RICHLAND, WA';
+      position: absolute;
+      bottom: -1.5rem;
+      right: 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .about-image-frame img,
+    .about-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .about-placeholder {
+      background: var(--blue-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--blue);
+    }
+
+    .about-placeholder p {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    /* SKILLS */
+    #skills { background: var(--cream); overflow-x: hidden; width: 100%; }
+
+    .skills-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      align-items: end;
+    }
+
+    .skills-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--blue-light);
+      border: 1px solid var(--blue-light);
+    }
+
+    .skill-card {
+      background: var(--cream);
+      padding: 2rem 1.75rem;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .skill-card:hover { background: var(--blue-light); }
+
+    .skill-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
+
+    .skill-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .skill-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* PORTFOLIO */
+    #portfolio { background: var(--navy); overflow-x: hidden; width: 100%; }
+
+    #portfolio .section-label { color: rgba(74, 127, 212, 0.8); }
+    #portfolio .section-title { color: var(--white); }
+    #portfolio .section-title em { color: var(--blue); }
+
+    /* Carousel */
+    .carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-track > .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-track > .carousel-slide img,
+    .carousel-track > .carousel-slide > div {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15,31,61,0.55);
+      border: none;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.2s, background 0.2s;
+    }
+
+    .carousel:hover .carousel-arrow { opacity: 1; }
+
+    .carousel-arrow:hover { background: var(--blue); }
+    .carousel-arrow.prev { left: 10px; }
+    .carousel-arrow.next { right: 10px; }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .carousel-dot.active {
+      background: var(--blue);
+      transform: scale(1.3);
+    }
+
+    /* Portfolio sub-sections */
+    .work-section {
+      margin-bottom: 5rem;
+    }
+
+    .work-section:last-child { margin-bottom: 0; }
+
+    .work-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .work-section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .work-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--white);
+      margin-top: 0.4rem;
+    }
+
+    .work-section-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      max-width: 420px;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    @media (max-width: 700px) {
+      .work-section-desc { text-align: left; max-width: 100%; }
+    }
+
+    /* Large gallery carousel */
+    .gallery-carousel {
+      aspect-ratio: 16/9;
+      max-height: 520px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-carousel { aspect-ratio: 4/3; max-height: none; }
+    }
+
+    /* Horizontal scroll rows (reels, social) */
+    .scroll-row {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-row::-webkit-scrollbar { height: 6px; }
+    .scroll-row::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+    .reel-card {
+      flex: 0 0 auto;
+      width: 220px;
+      aspect-ratio: 9/16;
+      border-radius: 4px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      background: #000;
+      position: relative;
+    }
+
+    .reel-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-card {
+      flex: 0 0 auto;
+      width: 300px;
+      scroll-snap-align: start;
+    }
+
+    .social-card iframe {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Analytics strip */
+    .analytics-strip {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .analytics-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .analytics-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .analytics-stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.25rem;
+    }
+
+    .card-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .card-placeholder svg { width: 32px; height: 32px; opacity: 0.3; }
+    .card-placeholder span { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.3; }
+
+    .card-placeholder.meta-ads { background: rgba(74,127,212,0.15); }
+    .card-placeholder.social { background: rgba(15,31,61,0.6); }
+    .card-placeholder.photography { background: rgba(74,127,212,0.08); }
+    .card-placeholder.graphics { background: rgba(45,91,163,0.2); }
+    .card-placeholder.email { background: rgba(74,127,212,0.12); }
+    .card-placeholder.analytics { background: rgba(15,31,61,0.5); }
+
+    .card-content { padding: 1.25rem 1.5rem 1.5rem; }
+
+    .card-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* EXPERIENCE */
+    #experience { background: var(--white); }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--blue), var(--border));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3.5rem;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -1.5rem;
+      top: 0.3rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+      transform: translateX(-4px);
+    }
+
+    .timeline-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-company {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .timeline-bullets li {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.65;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .experience-aside {
+      position: sticky;
+      top: 7rem;
+    }
+
+    .aside-card {
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .aside-card-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .aside-card p, .aside-card li {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .aside-card ul { list-style: none; }
+    .aside-card ul li { padding: 0.25rem 0; }
+    .aside-card ul li::before {
+      content: '→ ';
+      color: var(--blue);
+      font-size: 0.8rem;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--cream-dark);
+      text-align: center;
+      width: 100%;
+    }
+
+    #contact .section-title { margin-bottom: 0.75rem; }
+
+    .contact-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .contact-link.primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .contact-link.primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .contact-link.secondary {
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .contact-link.secondary:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      padding: 2rem 5%;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      width: 100%;
+    }
+
+    footer span { color: var(--blue); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+    .fade-in.d1 { animation-delay: 0.1s; }
+    .fade-in.d2 { animation-delay: 0.25s; }
+    .fade-in.d3 { animation-delay: 0.4s; }
+    .fade-in.d4 { animation-delay: 0.55s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; padding-top: 8rem; }
+      .hero-image { display: none; }
+      #about { grid-template-columns: 1fr; }
+      .about-image-wrap { display: none; }
+      .skills-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+      .experience-layout { grid-template-columns: 1fr; }
+      .experience-aside { position: static; }
+      .portfolio-card.large,
+      .portfolio-card.medium,
+      .portfolio-card.third { grid-column: span 12; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+        @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero-cta-ghost { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Alex<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow fade-in d1">Digital Marketing Specialist</p>
+      <h1 class="hero-name fade-in d2">
+        Hello,<br>I'm <em>Alex</em>
+      </h1>
+      <p class="hero-tagline fade-in d3">
+        I turn strategy into results. A full-funnel marketer specializing in paid social, content creation, analytics, and brand storytelling, always learning and expanding my toolkit.
+      </p>
+      <div class="fade-in d4">
+        <a href="#portfolio" class="hero-cta">View My Work</a>
+        <a href="#contact" class="hero-cta-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-stats fade-in d4">
+        <div>
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div>
+          <span class="stat-num">40+</span>
+          <span class="stat-label">Brands Managed</span>
+        </div>
+        <div>
+          <span class="stat-num">Full</span>
+          <span class="stat-label">Service Marketer</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-frame">
+<img src="assets/headshot.jpg" alt="Alex Thompson" />
+      </div>
+    </div>
+  </section>
+
+<!-- ABOUT -->
+  <section id="about">
+    <div class="about-text">
+      <p class="section-label">About Me</p>
+      <h2 class="section-title">Strategic. Creative.<br><em>Results-driven.</em></h2>
+      <p>I'm a Digital Marketing Specialist based in Richland, WA, I specialize in paid social advertising, content creation, analytics, and team leadership.</p>
+      <p>I've built expertise across the full marketing mix, from launching and optimizing Meta ad campaigns to directing photo shoots, writing copy, and mentoring teams. I lead with data and execute with creativity.</p>
+      <p>Beyond client work, I create content independently, partnering with brands and growing engaged audiences. Marketing isn't just what I do. It's how I see the world.</p>
+    </div>
+    <div class="about-image-wrap">
+      <div class="about-image-frame">
+<img src="assets/about-photo.jpg" alt="Alex on a photo shoot" />
+      </div>
+    </div>
+  </section>
+
+<!-- SKILLS -->
+  <section id="skills">
+    <div class="skills-intro">
+      <div>
+        <p class="section-label">What I Do</p>
+        <h2 class="section-title">A full suite of<br><em>marketing skills</em></h2>
+      </div>
+      <p class="skills-desc">From paid ads to photography, I bring together creative and analytical thinking to deliver marketing that performs. Here's what I bring to the table.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        </svg>
+        <p class="skill-name">Paid Social Advertising</p>
+        <p class="skill-desc">Campaign strategy, budget management, audience targeting and A/B testing across Meta, LinkedIn, and Pinterest.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 8v3l2 2"/>
+        </svg>
+        <p class="skill-name">Google Ads</p>
+        <p class="skill-desc">Search and display campaign setup, keyword strategy, and performance tracking, building on a strong paid media foundation.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+        </svg>
+        <p class="skill-name">Analytics & Reporting</p>
+        <p class="skill-desc">Performance analysis, KPI tracking, competitor research and actionable insight reporting for clients.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <p class="skill-name">Brand Strategy</p>
+        <p class="skill-desc">Market research, competitor analysis, brand voice and positioning for multi-channel campaigns.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+        </svg>
+        <p class="skill-name">Copywriting</p>
+        <p class="skill-desc">Brand voice development, ad copy, captions, email campaigns and content that converts.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <p class="skill-name">Email Marketing</p>
+        <p class="skill-desc">Newsletter strategy, promotional campaigns, segmentation and performance tracking.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01"/>
+        </svg>
+        <p class="skill-name">Graphic Design</p>
+        <p class="skill-desc">Ad graphics, social assets, campaign visuals, designed in Adobe Suite and Canva.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <p class="skill-name">Photography</p>
+        <p class="skill-desc">Creative direction and capture of high-quality photo and video content for brand campaigns and social.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+        </svg>
+        <p class="skill-name">Video Editing</p>
+        <p class="skill-desc">Producing polished video content for social platforms, ads, and campaigns using Adobe Suite.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-9-9c4.97 0 9 4.03 9 9z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18 15 15 0 010-18z"/>
+        </svg>
+        <p class="skill-name">Website Development</p>
+        <p class="skill-desc">Building and deploying responsive websites using GitHub, Netlify, and Vercel for fast, modern hosting.</p>
+      </div>
+      <div class="skill-card">
+        <svg class="skill-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+        </svg>
+        <p class="skill-name">AI-Driven Optimization</p>
+        <p class="skill-desc">Continuously researching and applying AI tools and best practices to improve workflows, campaigns, and content strategy.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- PORTFOLIO -->
+  <section id="portfolio">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">What I've <em>built</em></h2>
+
+    <!-- META PAID ADVERTISING -->
+    <div class="work-section">
+      <div class="work-section-header">
+        <div>
+          <p class="work-section-label">Meta Paid Advertising</p>
+          <h3 class="work-section-title">Campaigns &amp; Ad Creative</h3>
+        </div>
+        <p class="work-section-desc">A look at paid social creative across client accounts, including Greg Brown Orthodontics, where I grew monthly clicks from 1,500 to 2,361.</p>
+      </div>
+      <div class="gallery-carousel carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/work/meta-ad-greg-brown.jpg" alt="Greg Brown Orthodontics paid ad" style="object-fit:contain;" /></div>
+          <div class="carousel-slide"><img src="assets/work/cbc-classes-begin.jpg" alt="Columbia Basin College winter quarter ad" style="object-fit:contain;" /></div>
+          <div class="carousel-slide"><img src="assets/work/cbc-enrollment.jpg" alt="Columbia Basin College spring enrollment ad" style="object-fit:contain;" /></div>
+          <div class="carousel-slide"><img src="assets/work/meta-asian-expo.jpg" alt="Full service marketing highlight ad" style="object-fit:contain;" /></div>
+          <div class="carousel-slide"><img src="assets/work/meta-website-review.jpg" alt="Client testimonial ad graphic" style="object-fit:contain;" /></div>
+        </div>
+        <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+        <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+
+    <!-- PHOTOGRAPHY -->
+    <div class="work-section">
+      <div class="work-section-header">
+        <div>
+          <p class="work-section-label">Photography</p>
+          <h3 class="work-section-title">Brand &amp; Product Photography</h3>
+        </div>
+        <p class="work-section-desc">Creative direction and capture across client brands, from product shots to on-location lifestyle and showroom imagery.</p>
+      </div>
+      <div class="gallery-carousel carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/work/photography-coffeenow.jpg" alt="Coffee Now branded beverage photography" /></div>
+          <div class="carousel-slide"><img src="assets/work/colonial-landscaping.jpg" alt="Colonial landscaping detail photography" /></div>
+          <div class="carousel-slide"><img src="assets/work/colonial-spray.jpg" alt="Colonial lawn care service photography" /></div>
+          <div class="carousel-slide"><img src="assets/work/kie-showroom.jpg" alt="KIE Supply showroom photography" /></div>
+          <div class="carousel-slide"><img src="assets/work/kie-konaice.jpg" alt="Kona Ice food truck photography" /></div>
+        </div>
+        <button class="carousel-arrow prev" aria-label="Previous">&#8249;</button>
+        <button class="carousel-arrow next" aria-label="Next">&#8250;</button>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+
+    <!-- REELS / VIDEO -->
+    <div class="work-section">
+      <div class="work-section-header">
+        <div>
+          <p class="work-section-label">Video Editing</p>
+          <h3 class="work-section-title">Reels &amp; Short-Form Video</h3>
+        </div>
+        <p class="work-section-desc">Edited short-form video content for client and brand accounts, built for engagement on Instagram and TikTok.</p>
+      </div>
+      <div class="scroll-row">
+        <div class="reel-card">
+          <video controls preload="none" poster="assets/work/reels/reel1-poster.jpg">
+            <source src="assets/work/reels/reel1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="reel-card">
+          <video controls preload="none" poster="assets/work/reels/reel2-poster.jpg">
+            <source src="assets/work/reels/reel2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="reel-card">
+          <video controls preload="none" poster="assets/work/reels/reel3-poster.jpg">
+            <source src="assets/work/reels/reel3.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="work-section">
+      <div class="work-section-header">
+        <div>
+          <p class="work-section-label">Social Media</p>
+          <h3 class="work-section-title">Published Content</h3>
+        </div>
+        <p class="work-section-desc">A selection of organic posts and reels published across client and personal accounts.</p>
+      </div>
+      <div class="scroll-row">
+        <div class="social-card">
+          <iframe src="https://www.instagram.com/reel/DSdSq6sFYK9/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+        <div class="social-card">
+          <iframe src="https://www.instagram.com/p/DYAomw3EgoM/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+        <div class="social-card">
+          <iframe src="https://www.instagram.com/p/C4s6ZKEsG9w/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+        <div class="social-card">
+          <iframe src="https://www.instagram.com/p/CovRY9uStyL/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+        <div class="social-card">
+          <iframe src="https://www.instagram.com/p/DCS3wZytJ2P/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYTICS & REPORTING -->
+    <div class="work-section">
+      <div class="work-section-header">
+        <div>
+          <p class="work-section-label">Analytics &amp; Reporting</p>
+          <h3 class="work-section-title">Real Campaign Results</h3>
+        </div>
+        <p class="work-section-desc">A snapshot of measurable performance gains delivered across client accounts through ongoing optimization and reporting.</p>
+      </div>
+      <div class="analytics-strip">
+        <div>
+          <div class="analytics-stat-num">6 &rarr; 58</div>
+          <div class="analytics-stat-label">Monthly Leads, Atomic Dermatology</div>
+        </div>
+        <div>
+          <div class="analytics-stat-num">11.6 &rarr; 26</div>
+          <div class="analytics-stat-label">Monthly Leads, The Blind Guy</div>
+        </div>
+        <div>
+          <div class="analytics-stat-num">1.5K &rarr; 6.4K</div>
+          <div class="analytics-stat-label">Event Responses, Tumbleweed Festival</div>
+        </div>
+        <div>
+          <div class="analytics-stat-num">Top 20</div>
+          <div class="analytics-stat-label">15/20 Best Ads, Apollo Heating</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="experience-layout">
+      <div>
+        <p class="section-label">Career</p>
+        <h2 class="section-title">Growing with<br><em>every role.</em></h2>
+        <p style="font-size:0.95rem; font-weight:300; color:var(--text-muted); line-height:1.8; margin-top:1rem;">Each role brought new scope and responsibility, from content execution to campaign strategy, team leadership, and full-funnel paid advertising.</p>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">September 2024, Present</p>
+          <h3 class="timeline-role">Digital Marketing Specialist & Social Media Lead</h3>
+          <p class="timeline-company">Spotted Fox Digital Marketing, Richland, WA</p>
+          <ul class="timeline-bullets">
+            <li>Spearheaded strategy, execution, and optimization of paid Meta advertising campaigns across Facebook and Instagram.</li>
+            <li>Develop comprehensive analytics reports with actionable insights and adjust campaigns to meet client KPIs.</li>
+            <li>Conduct competitor and market analysis to identify opportunities and keep clients ahead of the curve.</li>
+            <li>Collaborate across departments to ensure digital efforts align with broader business objectives.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">November 2023, September 2024</p>
+          <h3 class="timeline-role">Social Media Lead & Assistant Photographer</h3>
+          <p class="timeline-company">Spotted Fox Digital Marketing, Richland, WA</p>
+          <ul class="timeline-bullets">
+            <li>Led content strategy and execution for 16+ social media clients, driving engagement through tailored campaigns.</li>
+            <li>Orchestrated creative photo shoots, capturing and editing high-quality photo and video content.</li>
+            <li>Reviewed and provided feedback on specialist work, ensuring alignment with brand guidelines.</li>
+            <li>Managed workflows and mentored social media specialists to improve team performance.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">September 2022, November 2023</p>
+          <h3 class="timeline-role">Social Media Specialist</h3>
+          <p class="timeline-company">Spotted Fox Digital Marketing, Richland, WA</p>
+          <ul class="timeline-bullets">
+            <li>Created social media content for clients, managing day-to-day posts and fostering audience engagement.</li>
+            <li>Curated graphic, photo, and video content aligned with each brand's voice and guidelines.</li>
+            <li>Led email marketing initiatives including newsletters and promotional campaigns.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">January 2021, Present</p>
+          <h3 class="timeline-role">Content Creator</h3>
+          <p class="timeline-company">Independent, Remote</p>
+          <ul class="timeline-bullets">
+            <li>Create and curate content for personal social accounts and multiple brand client accounts.</li>
+            <li>Partner with brands to produce promotional content that drives revenue and awareness.</li>
+            <li>Strategize and implement social media content calendars across platforms.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Education & Skills Aside -->
+    <div style="margin-top: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div class="aside-card">
+        <p class="aside-card-title">Education</p>
+        <ul>
+          <li>Columbia Basin College, Associate Degree</li>
+          <li>Richland High School, Diploma</li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <p class="aside-card-title">Tools & Platforms</p>
+        <ul>
+          <li>Adobe Suite (Ps, Pr, Ai)</li>
+          <li>Meta, LinkedIn & Pinterest Ads</li>
+          <li>Google Ads</li>
+          <li>Analytics & Reporting Platforms</li>
+          <li>Email Marketing Platforms</li>
+          <li>Canva</li>
+          <li>GitHub, Netlify & Vercel</li>
+        </ul>
+      </div>
+    </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Let's Connect</p>
+    <h2 class="section-title">Ready to work <em>together?</em></h2>
+    <p class="contact-sub">I'm open to new opportunities, collaborations, and conversations. Whether you're a brand, agency, or employer, I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:alexandrasomm-contact@yahoo.com" class="contact-link primary">Send an Email</a>
+      <a href="https://www.linkedin.com/in/alex-t-885035249/" target="_blank" class="contact-link secondary">LinkedIn ↗</a>
+      <a href="assets/resume.pdf" download class="contact-link secondary">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <span>Alex Thompson</span> · Built with intention · Richland, WA</p>
+  </footer>
+
+  <script>
+    // Carousel logic for portfolio cards
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const prevBtn = carousel.querySelector('.carousel-arrow.prev');
+      const nextBtn = carousel.querySelector('.carousel-arrow.next');
+      const dotsContainer = carousel.querySelector('.carousel-dots');
+      let index = 0;
+
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (dotsContainer) dotsContainer.style.display = 'none';
+        return;
+      }
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        update();
+      }
+
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(index - 1); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(index + 1); });
+
+      // Touch swipe support
+      let startX = 0;
+      track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+      track.addEventListener('touchend', (e) => {
+        const diff = e.changedTouches[0].clientX - startX;
+        if (diff > 50) goTo(index - 1);
+        else if (diff < -50) goTo(index + 1);
+      });
+    });
+
+    // Scroll-triggered fade-in for sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.skill-card, .work-section, .timeline-item, .aside-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
